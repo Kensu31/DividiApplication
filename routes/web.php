@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\usercontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,8 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('users.registration');
 });
+Route::get('/dashboard', function () {
+    return view('users.dashboard');
+});
+
+Route::post('/registerUser', [usercontroller::class, 'register']);
